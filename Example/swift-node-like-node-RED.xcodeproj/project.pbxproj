@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1B08F482E6032D0004A993F /* swift-lib-like-Node-RED in Frameworks */ = {isa = PBXBuildFile; productRef = C1B08F472E6032D0004A993F /* swift-lib-like-Node-RED */; };
 		C1B08F492E60366A004A993F /* swift-lib-like-Node-RED in Frameworks */ = {isa = PBXBuildFile; productRef = C1B08F312E5FF6FF004A993F /* swift-lib-like-Node-RED */; };
-		C1B08F542E603733004A993F /* swift-lib-like-Node-RED in Frameworks */ = {isa = PBXBuildFile; productRef = C1B08F532E603733004A993F /* swift-lib-like-Node-RED */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +57,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B08F492E60366A004A993F /* swift-lib-like-Node-RED in Frameworks */,
-				C1B08F542E603733004A993F /* swift-lib-like-Node-RED in Frameworks */,
-				C1B08F482E6032D0004A993F /* swift-lib-like-Node-RED in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +120,7 @@
 				C1B08F312E5FF6FF004A993F /* swift-lib-like-Node-RED */,
 				C1B08F472E6032D0004A993F /* swift-lib-like-Node-RED */,
 				C1B08F532E603733004A993F /* swift-lib-like-Node-RED */,
+				C1DA590C2E6291990034B908 /* swift-lib-like-Node-RED */,
 			);
 			productName = "swift-node-like-node-RED";
 			productReference = C1B7A6D42DFFAF1C00AA25D4 /* swift-node-like-node-RED.app */;
@@ -655,6 +652,10 @@
 			productName = "swift-lib-like-Node-RED";
 		};
 		C1B08F532E603733004A993F /* swift-lib-like-Node-RED */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "swift-lib-like-Node-RED";
+		};
+		C1DA590C2E6291990034B908 /* swift-lib-like-Node-RED */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "swift-lib-like-Node-RED";
 		};
