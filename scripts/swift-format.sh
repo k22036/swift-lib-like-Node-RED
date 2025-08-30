@@ -2,7 +2,7 @@
 set -e
 
 # フォーマットしたいフォルダを指定
-TARGET_DIRS=("${SRCROOT:-.}/")
+TARGET_DIRS=("${SRCROOT:-.}/Sources/")
 # swift-formatの設定ファイルを指定
 TARGET_DIR="${SRCROOT:-.}"
 config_file="$TARGET_DIR/.swift-format"
