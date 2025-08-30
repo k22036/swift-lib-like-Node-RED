@@ -367,7 +367,7 @@ final class GeolocationNode: NSObject, Codable, Sendable, Node, CLLocationManage
     }
 
     deinit {
-//        locationManager?.stopUpdateLocation()
+        locationManager?.stopUpdateLocation()
     }
 
     func receive(msg: NodeMessage) {

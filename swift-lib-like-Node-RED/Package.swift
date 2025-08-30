@@ -26,10 +26,10 @@ let package = Package(
             dependencies: [
                 .product(name: "AsyncAlgorithms", package: "swift-async-algorithms"),
                 .product(name: "MQTTNIO", package: "mqtt-nio"),
-            ]),
-//        .testTarget(
-//            name: "swift-lib-like-Node-REDTests",
-//            dependencies: ["swift-lib-like-Node-RED"]
-//        ),
+            ])
+        //        .testTarget(
+        //            name: "swift-lib-like-Node-REDTests",
+        //            dependencies: ["swift-lib-like-Node-RED"]
+        //        ),
     ]
 )
