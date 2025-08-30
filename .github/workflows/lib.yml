@@ -54,8 +54,8 @@ jobs:
           sudo tccutil reset Accessibility
           sudo tccutil reset All
 
-      # Build and test
-      - name: Build and test
+      # Build
+      - name: Build
         run: |
           set -o pipefail
           xcodebuild build \
