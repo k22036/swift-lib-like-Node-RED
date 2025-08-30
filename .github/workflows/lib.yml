@@ -11,9 +11,6 @@ jobs:
   build:
     runs-on: macos-latest
     timeout-minutes: 20
-    defaults:
-      run:
-        working-directory: swift-lib-like-Node-RED
 
     steps:
       - name: Checkout repository

@@ -118,9 +118,6 @@
 			name = "swift-node-like-node-RED";
 			packageProductDependencies = (
 				C1B08F312E5FF6FF004A993F /* swift-lib-like-Node-RED */,
-				C1B08F472E6032D0004A993F /* swift-lib-like-Node-RED */,
-				C1B08F532E603733004A993F /* swift-lib-like-Node-RED */,
-				C1DA590C2E6291990034B908 /* swift-lib-like-Node-RED */,
 			);
 			productName = "swift-node-like-node-RED";
 			productReference = C1B7A6D42DFFAF1C00AA25D4 /* swift-node-like-node-RED.app */;
@@ -178,7 +175,7 @@
 			mainGroup = C1B7A6CB2DFFAF1C00AA25D4;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				C1B08F522E603733004A993F /* XCLocalSwiftPackageReference "../swift-lib-like-Node-RED" */,
+				C1C191002E62C6420063AD35 /* XCLocalSwiftPackageReference "../../swift-lib-like-Node-RED" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C1B7A6D52DFFAF1C00AA25D4 /* Products */;
@@ -636,26 +633,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		C1B08F522E603733004A993F /* XCLocalSwiftPackageReference "../swift-lib-like-Node-RED" */ = {
+		C1C191002E62C6420063AD35 /* XCLocalSwiftPackageReference "../../swift-lib-like-Node-RED" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "../swift-lib-like-Node-RED";
+			relativePath = "../../swift-lib-like-Node-RED";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		C1B08F312E5FF6FF004A993F /* swift-lib-like-Node-RED */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "swift-lib-like-Node-RED";
-		};
-		C1B08F472E6032D0004A993F /* swift-lib-like-Node-RED */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "swift-lib-like-Node-RED";
-		};
-		C1B08F532E603733004A993F /* swift-lib-like-Node-RED */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "swift-lib-like-Node-RED";
-		};
-		C1DA590C2E6291990034B908 /* swift-lib-like-Node-RED */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "swift-lib-like-Node-RED";
 		};

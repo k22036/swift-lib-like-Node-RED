@@ -1,5 +1,5 @@
 {
-  "originHash" : "01e5c0b2cf1ba0f146c3531c48cdc7f0dd498a002aa9ea6f922278a3442dff36",
+  "originHash" : "8529fbaaadc7dda938bdb1d7d834d3588dbb2a97474f0b58c4240f0e7da2c36b",
   "pins" : [
     {
       "identity" : "mqtt-nio",
