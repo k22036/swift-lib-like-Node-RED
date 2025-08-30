@@ -1,0 +1,80 @@
+name: Example APP CI
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: Example
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache Xcode build
+        uses: irgaly/xcode-cache@v1
+        with:
+          key: APP-xcode-cache-deriveddata-${{ github.workflow }}-${{ github.sha }}
+          restore-keys: APP-xcode-cache-deriveddata-${{ github.workflow }}-
+          deriveddata-directory: .build
+          sourcepackages-directory: .build/SourcePackages
+
+      - name: Select Xcode version
+        env:
+          XCODE_PATH: /Applications/Xcode_16.4.app
+        run: sudo xcode-select -s "$XCODE_PATH"
+
+      # Swift format
+      - name: Ensure swift-format.sh is executable
+        run: chmod +x ./scripts/swift-format.sh
+
+      - name: Format code
+        run: ./scripts/swift-format.sh
+        shell: sh
+
+      # Swift lint
+      - name: Ensure swift-lint.sh is executable
+        run: chmod +x ./scripts/swift-lint.sh
+
+      - name: Lint code
+        run: ./scripts/swift-lint.sh
+        shell: sh
+
+      - name: Kill Simulator and Reset Accessibility
+        run: |
+          killall Simulator || true
+          sudo tccutil reset Accessibility
+          sudo tccutil reset All
+
+      # Build and test
+      - name: Build and test
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -scheme swift-node-like-node-RED \
+            -configuration CI \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -parallel-testing-enabled NO \
+            -derivedDataPath .build \
+            -skipPackageSignatureValidation \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGN_ENTITLEMENTS="" \
+            ENABLE_TESTABILITY=YES | xcbeautify
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: .build/Logs/Test/*.xcresult
